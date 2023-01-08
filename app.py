@@ -12,6 +12,11 @@ def home():
 def login():
     if request.method == "GET":
         return render_template("login.html")
+    elif request.method == "POST":
+        _data = users.userCheck(request.json)
+        return {"login":"success"} if _data == 1 else {"login":"failed"}
+        
+        
 
 @app.route("/signup", methods=["GET","POST"])
 def signup():

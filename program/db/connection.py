@@ -13,6 +13,21 @@ dbpool = psycopg2.pool.ThreadedConnectionPool(
     password = "qwertyuiop")
 
 @contextmanager
+def getCursor():
+    _conn = dbpool.getconn()
+    try:
+        with _conn.cursor() as _curr:
+            yield _curr
+            _conn.commit()
+        return {"Success":1}
+    except Exception as _err:
+        _conn.rollback()
+        print(_err)
+        return {"Success":0,"Message":_err}
+    finally:
+        dbpool.putconn(_conn)
+
+@contextmanager
 def getCursorDict():
     _conn = dbpool.getconn()
     try:
