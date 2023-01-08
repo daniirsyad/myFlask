@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup - Company</title>
+</head>
+<body class="font-mono">
+    <div class="flex h-screen items-center justify-center border">
+        <form action="/signup" method="post">
+          <div class="border p-2">
+            <div>
+              <h1 class="text-center text-xl font-bold underline">Create an Account</h1>
+            </div>
+            <div class="m-2">
+              <label for="fname" class="text xs">Your Name</label>
+              <input type="text" name="fname" placeholder="full name" class="ml-5 block rounded-md border py-1 px-3 outline-none focus:placeholder:opacity-0" />
+            </div>
+            <div class="m-2">
+              <label for="email" class="text xs">Email</label>
+              <input type="text" name="email" placeholder="email@example" class="ml-5 block rounded-md border py-1 px-3 outline-none focus:placeholder:opacity-0" />
+            </div>
+            <div class="m-2">
+              <label for="username" class="text xs">Username</label>
+              <input type="text" name="username" placeholder="username" class="ml-5 block rounded-md border py-1 px-3 outline-none focus:placeholder:opacity-0" />
+            </div>
+            <div class="m-2">
+              <label for="password" class="text xs">Password</label>
+              <input type="password" name="username" placeholder="password" class="ml-5 block rounded-md border py-1 px-3 outline-none focus:placeholder:opacity-0" />
+            </div>
+            <div class="m-2 flex justify-end">
+              <input type="submit" value="Create" class="cursor-pointer rounded-md border bg-black py-1 px-3 text-white outline-none hover:font-semibold" />
+            </div>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
